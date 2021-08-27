@@ -28,16 +28,6 @@
     background-size: cover;
 
 }
-.scrollbar
-{
-	margin-left: 30px;
-	float: left;
-	height: 300px;
-	width: 65px;
-	background: #F5F5F5;
-	overflow-y: scroll;
-	margin-bottom: 25px;
-}
 
   .txt-sobrenos {
     background: rgba(201, 179, 179, 0.575);
