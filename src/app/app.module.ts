@@ -10,8 +10,13 @@ import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
+<<<<<<< HEAD
 import { CadastrarEmpresaComponent } from './cadastrar-empresa/cadastrar-empresa.component';
 import { CadastrarCandidatoComponent } from './cadastrar-candidato/cadastrar-candidato.component';
+=======
+import { EntrarComponent } from './entrar/entrar.component';
+import { InicioComponent } from './inicio/inicio.component';
+>>>>>>> task9/criacaoFront
 
 @NgModule({
   declarations: [
@@ -20,8 +25,13 @@ import { CadastrarCandidatoComponent } from './cadastrar-candidato/cadastrar-can
     MenuComponent,
     RodapeComponent,
     SobrenosComponent,
+<<<<<<< HEAD
     CadastrarEmpresaComponent,
     CadastrarCandidatoComponent
+=======
+    EntrarComponent,
+    InicioComponent
+>>>>>>> task9/criacaoFront
   ],
   imports: [
     BrowserModule,
