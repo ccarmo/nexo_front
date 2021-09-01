@@ -9,6 +9,7 @@ import { Usuario } from '../model/Usuario';
   styleUrls: ['./cadastrar-empresa.component.css']
 })
 export class CadastrarEmpresaComponent implements OnInit {
+  
   confirmarSenha: string;
   usuario: Usuario = new Usuario;
   constructor(
@@ -21,6 +22,7 @@ export class CadastrarEmpresaComponent implements OnInit {
 ngOnInit() {
   window.scroll(0,0);
 }
+
 confirmSenha (event: any) {
   this.confirmarSenha = event.target.value;
 
