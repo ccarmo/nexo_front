@@ -1,0 +1,38 @@
+#bgColor {
+    background: rgb(1,106,109);
+    background: radial-gradient(circle, rgba(1,106,109,1) 0%, rgba(5,81,107,1) 50%, rgba(4,62,82,1) 100%);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#img-principal
+{
+    background-image: url('https://i.imgur.com/qHQ5MWJ.png');
+    min-height: 765px;
+    min-width: 765px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#img-sobrenos{
+    background-image: url('https://i.imgur.com/bmlZSp6.png');
+    min-height: 100px;
+    min-width: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+  .txt-sobrenos {
+    background: rgba(201, 179, 179, 0.575);
+    width: 300px;
+    height: 600px;
+    overflow-y: scroll;
+  }
+
