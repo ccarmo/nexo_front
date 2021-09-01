@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cadastrar-empresa',
   templateUrl: './cadastrar-empresa.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastrarEmpresaComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    
+    private router: Router
+) { }
 
-  ngOnInit(): void {
-  }
 
+
+ngOnInit() {
+  window.scroll(0,0);
 }
