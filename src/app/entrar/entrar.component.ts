@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UsuarioDTO } from '../model/UsuarioDTO';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-entrar',
@@ -7,20 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntrarComponent implements OnInit {
 
-  userLogin: UserLogin = new this.userLogin()
+
+  usuarioDTO: UsuarioDTO = new UsuarioDTO();
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     window.scroll(0,0)
   }
 
-  entrar(){
-    this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
-      this.userLogin = resp
+   entrar(){
+     this.auth.entrar(this.usuarioDTO).subscribe((resp: UsuarioDTO)=>{
+       this.usuarioDTO = resp;
+       this.router.navigate(['/inicio'])
     })
-  }
+   }
 
 }
