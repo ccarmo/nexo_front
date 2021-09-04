@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { Usuario } from '../model/Usuario';
+
 @Component({
   selector: 'app-cadastrar-candidato',
   templateUrl: './cadastrar-candidato.component.html',
@@ -32,7 +33,7 @@ cadastrar(){
   } else {
     this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
       this.usuario = resp
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['entrar'])
       alert('Usuário cadastrado com sucesso!')
     })
   }
