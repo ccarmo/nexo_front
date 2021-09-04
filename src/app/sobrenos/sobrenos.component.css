@@ -1,38 +1,57 @@
-#bgColor {
+#Workflow {
+    padding: 70px 0px 80px;
     background: rgb(1,106,109);
     background: radial-gradient(circle, rgba(1,106,109,1) 0%, rgba(5,81,107,1) 50%, rgba(4,62,82,1) 100%);
+    color: #fff;
 }
-
-.box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#Workflow .work-process::after {
+    content: "";
+    position: absolute;
+    background: #f1f3f5;
+    left: 0px;
+    top: 0px;
+    width: 0px;
+    height: 100%;
+    transition: all 0.3s;
+    z-index: -1;
 }
-
-#img-principal
-{
-    background-image: url('https://i.imgur.com/qHQ5MWJ.png');
-    min-height: 765px;
-    min-width: 765px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#Workflow .work-process:hover::after {
+    background: rgb(233 248 255 / 22%);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10px;
 }
-
-#img-sobrenos{
-    background-image: url('https://i.imgur.com/bmlZSp6.png');
-    min-height: 100px;
-    min-width: 300px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+#Workflow .work-process {
+    background-color: rgba(255, 255, 255, 0.712);
+    padding: 40px 15px;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+    box-shadow: 0px 30px 0px -20px #ffffff;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #607d8b;
+    text-align: center;
 }
-
-  .txt-sobrenos {
-    background: rgba(201, 179, 179, 0.575);
-    width: 300px;
-    height: 600px;
-    overflow-y: scroll;
-  }
-
+#Workflow .work-process i {
+    margin: 0 auto;
+    display: table;
+    background-color: #607d8b;
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    line-height: 70px;
+}
+#Workflow .work-process h3 {
+    margin: 15px 0px;
+}
+#Workflow .work-process h3 a {
+    font-size: 20px;
+    color: #607d8b;
+}
+#Workflow .work-process p {
+    color: #8d9ea7;
+}

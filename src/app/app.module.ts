@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
+import { TimedevComponent } from './timedev/timedev.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
     HomeComponent,
     MenuComponent,
     RodapeComponent,
-    SobrenosComponent
+    SobrenosComponent,
+    TimedevComponent
   ],
   imports: [
     BrowserModule,
