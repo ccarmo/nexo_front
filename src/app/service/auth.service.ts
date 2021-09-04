@@ -13,11 +13,15 @@ export class AuthService {
   ) { }
 
   entrar (usuarioDTO: UsuarioDTO): Observable<UsuarioDTO> {
+
     return this.http.put<UsuarioDTO>('http://localhost:8080/usuario/entrar', usuarioDTO);
   }
     
   cadastrar (usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>('http://localhost:8080/usuario/cadastrar', usuario)
+
   }
+    
+
 
 }

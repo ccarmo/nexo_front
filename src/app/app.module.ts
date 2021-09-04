@@ -14,6 +14,7 @@ import { CadastrarEmpresaComponent } from './cadastrar-empresa/cadastrar-empresa
 import { CadastrarCandidatoComponent } from './cadastrar-candidato/cadastrar-candidato.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { TimedevComponent } from './timedev/timedev.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { InicioComponent } from './inicio/inicio.component';
     CadastrarEmpresaComponent,
     CadastrarCandidatoComponent,
     EntrarComponent,
-    InicioComponent
+    InicioComponent,
+    TimedevComponent
   ],
   imports: [
     BrowserModule,

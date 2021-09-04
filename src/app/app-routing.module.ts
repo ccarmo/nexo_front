@@ -16,8 +16,12 @@ const routes: Routes = [
     {path:'inicio', component: InicioComponent}
 ];
 
+
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
   })
+
   export class AppRoutingModule { }
+
+
