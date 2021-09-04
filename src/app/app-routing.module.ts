@@ -12,10 +12,11 @@ const routes: Routes = [
     {path:'cadastrar-empresa', component: CadastrarEmpresaComponent},
     {path:'cadastrar-candidato', component: CadastrarCandidatoComponent},
     {path:'inicio', component: InicioComponent}
-  ];
-
+];
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
-  export class AppRoutingModule { }
+  declarations: [],
+  imports: [
+    CommonModule
+  ]
+})
+export class AppRoutingModule { }
