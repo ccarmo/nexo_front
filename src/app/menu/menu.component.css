@@ -1,5 +1,131 @@
-#logo
-{
-    width: 150px;
-    height: 50px;
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu-nexo {
+    color: white;
+    background: url("https://i.ibb.co/JCYZgYy/background1.jpg") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 1px;
+}
+
+.menu-nexo .navbar-nav>li>a {
+    color: white;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.menu-nexo .navbar {
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    width: 100%;
+    border-bottom:none;
+    background-color: transparent;
+    min-width: 300px;
+    border: none;
+}
+
+.menu-nexo .navbar-default .navbar-nav>.open>a,
+.menu-nexo .navbar-default .navbar-nav>.open>a:focus,
+.menu-nexo .navbar-default .navbar-nav>.open>a:hover {
+    color: #ccc;
+    background-color: transparent;
+}
+
+.menu-nexo .nav>li>a:focus,
+.menu-nexo .nav>li>a:hover {
+    color: #ccc;
+    background-color: transparent;
+}
+
+.menu-nexo .navbar-nav>li {
+    margin-right: 20px;
+}
+
+.menu-nexo .navbar-nav {
+   margin-top: 12px;
+}
+
+.menu-nexo .navbar-toggle {
+    background-color: transparent !important;
+    margin-top: 20px;
+    border: 1px solid #fff;
+}
+
+.menu-nexo .hero {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.menu-nexo .hero h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: 36px;
+}
+
+
+.menu-nexo .hero p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 18px;
+    max-width: 660px;
+    margin: 0 auto 20px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.menu-nexo .btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fffbfb !important;
+    outline:none;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 18px 24px;
+    transition:0.2s background-color;
+}
+
+.menu-nexo .btn-primary:hover {
+    background-color:rgba(255,255,255,0.1);
+}
+
+.menu-nexo .btn-primary:active {
+    transform:translateY(1px);
+}
+
+@media screen and (max-width: 767px) {
+
+    .menu-nexo .navbar-default .navbar-nav .open .dropdown-menu>li>a{
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .menu-nexo .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
+        color: #ccc;
+    }
+
+    .menu-nexo .navbar-collapse {
+        margin-left: 20px;
+        border-top: none;
+        box-shadow: none;
+    }
+
+    .menu-nexo .hero{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .header-nightsky .hero h1{
+        font-size: 42px;
+    }
+      
+    #logo {
+        height: 80px;
+        max-height: 80px;
+        width: auto;
+    }
 }
