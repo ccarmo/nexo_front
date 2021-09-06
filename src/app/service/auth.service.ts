@@ -13,11 +13,15 @@ export class AuthService {
   ) { }
 
   entrar (usuarioDTO: UsuarioDTO): Observable<UsuarioDTO> {
-    return this.http.post<UsuarioDTO>('https://projetonexogen.herokuapp.com/usuario/entrar', usuarioDTO);
+    console.log(usuarioDTO)
+    return this.http.put<UsuarioDTO>('http://localhost:8080/usuario/entrar', usuarioDTO);
+    
   }
     
   cadastrar (usuario: Usuario): Observable<Usuario>{
-    return this.http.post<Usuario>('https://projetonexogen.herokuapp.com/usuario/cadastrar', usuario)
+    console.log(usuario)
+    return this.http.post<Usuario>('http://localhost:8080/usuario/cadastrar', usuario);
+    
   }
 
 }
