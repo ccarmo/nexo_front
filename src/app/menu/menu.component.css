@@ -1,5 +1,9 @@
-body {
+
+   body {
     font-family: 'Montserrat', sans-serif;
+}
+#color-select{
+    background-color: transparent;
 }
 
 .menu-nexo {
@@ -11,6 +15,7 @@ body {
 }
 
 .menu-nexo .navbar-nav>li>a {
+    justify-content: flex-end;
     color: white;
     font-size: 14px;
     border-radius: 10px;
@@ -121,11 +126,10 @@ body {
 
     .header-nightsky .hero h1{
         font-size: 42px;
-    }
-      
+    }   
     #logo {
-        height: 80px;
-        max-height: 80px;
-        width: auto;
+        width: 150px;
+        height: 50px;
     }
+
 }
