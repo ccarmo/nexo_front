@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
+import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  usuario: Usuario = new Usuario();
+  idUsuario = environment.id;
+  nome = environment.nome;
+  foto = environment.foto;
+
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  buscarPorId(){
+    this.authService.buscarPorId(this.idUsuario).subscribe((resp: Usuario) => {
+      this.usuario = resp
+    })
   }
 
 }
