@@ -9,7 +9,7 @@ import { TimedevComponent } from './timedev/timedev.component';
 
 const routes: Routes = [
 
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: '', redirectTo: 'entrar', pathMatch: 'full'},
     {path:'entrar', component: EntrarComponent},
     {path:'home', component: HomeComponent},
     {path:'inicio', component: InicioComponent},
