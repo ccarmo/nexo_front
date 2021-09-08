@@ -8,7 +8,10 @@ import { UsuarioDTO } from '../model/UsuarioDTO';
   providedIn: 'root'
 })
 export class AuthService {
-
+  
+  nome = environment.nome
+  foto = environment.nome
+  
   constructor(
     private http: HttpClient
   ) { }
@@ -18,7 +21,7 @@ export class AuthService {
   };
 
   entrar (usuarioDTO: UsuarioDTO): Observable<UsuarioDTO> {
-    console.log(usuarioDTO)
+    
     return this.http.put<UsuarioDTO>('http://localhost:8080/usuario/entrar', usuarioDTO);
     
   }

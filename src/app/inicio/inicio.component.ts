@@ -14,12 +14,13 @@ export class InicioComponent implements OnInit {
   idUsuario = environment.id;
   nome = environment.nome;
   foto = environment.foto;
+  email = environment.email;
 
   constructor(
     private authService: AuthService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   buscarPorId(){

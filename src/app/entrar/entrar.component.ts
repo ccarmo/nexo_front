@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { UsuarioDTO } from '../model/UsuarioDTO';
 import { AuthService } from '../service/auth.service';
 
@@ -24,7 +25,10 @@ export class EntrarComponent implements OnInit {
 
    entrar(){
      this.auth.entrar(this.usuarioDTO).subscribe((resp: UsuarioDTO)=>{
-       this.usuarioDTO = resp;
+       this.usuarioDTO   = resp;
+       environment.nome  = this.usuarioDTO.nome
+       environment.foto  = this.usuarioDTO.foto
+       environment.email = this.usuarioDTO.email
        this.router.navigate(['/inicio'])
     })
    }
