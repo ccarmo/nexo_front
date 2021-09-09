@@ -15,7 +15,9 @@ export class PostagemService {
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
   };
-
+  getAllPostagens(): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>('http://localhost:8080/postagem', this.token)
+  }
   novaPostagem(postagem: Postagem): Observable<Postagem> {
 
     return this.http.put<Postagem>('http://localhost:8080​/postagem/novapostagem', Postagem);

@@ -31,23 +31,46 @@ export class InicioComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router, 
+    private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService
   ) { }
 
   ngOnInit() {
-    if(environment.token == ''){
+    if (environment.token == '') {
       alert('Sua seção expirou, faça o login novamente.')
       this.router.navigate(['/entrar'])
-      
+      this.getAllTemas()
+      this.getAllPostagens()
     }
   }
-
-  buscarPorId(){
+  getAllTemas() {
+    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+      this.listaTemas = resp
+    })
+  }
+  getAllPostagens() {
+    this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
+      this.listaPostagens = resp
+    })
+  }
+  buscarPorId() {
     this.authService.buscarPorId(this.idUsuario).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
+  publicar() {
+    this.tema.id = this.idTema
+    this.postagem.postagemTema = this.tema
 
+    this.usuario.id_usuario = this.idUsuario
+    this.postagem.postagemUsuario = this.usuario
+
+    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+      this.postagem = resp
+
+      this.postagem = new Postagem()
+      this.getAllPostagens()
+    })
+  }
 }
