@@ -16,6 +16,7 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { TimedevComponent } from './timedev/timedev.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
+import { PostagemComponent } from './postagem/postagem.component';
 
 
 
@@ -32,7 +33,8 @@ import { TemaComponent } from './tema/tema.component';
     CadastrarCandidatoComponent,
     TimedevComponent,
     InicioComponent,
-    TemaComponent
+    TemaComponent,
+    PostagemComponent
   ],
   imports: [
     BrowserModule,
