@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
@@ -17,10 +18,15 @@ export class InicioComponent implements OnInit {
   email = environment.email;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
+    if(environment.token == ''){
+      alert('Sua seção expirou, faça o login novamente.')
+      this.router.navigate(['/entrar'])
+    }
   }
 
   buscarPorId(){
