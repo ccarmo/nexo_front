@@ -15,6 +15,7 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { TimedevComponent } from './timedev/timedev.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { TemaComponent } from './tema/tema.component';
 
 
 
@@ -30,7 +31,8 @@ import { InicioComponent } from './inicio/inicio.component';
     CadastrarEmpresaComponent,
     CadastrarCandidatoComponent,
     TimedevComponent,
-    InicioComponent
+    InicioComponent,
+    TemaComponent
   ],
   imports: [
     BrowserModule,
