@@ -6,6 +6,7 @@ import { CadastrarCandidatoComponent } from './cadastrar-candidato/cadastrar-can
 import { HomeComponent } from './home/home.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TimedevComponent } from './timedev/timedev.component';
+import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
 
@@ -15,7 +16,8 @@ const routes: Routes = [
     {path:'inicio', component: InicioComponent},
     {path:'timedev', component: TimedevComponent},
     {path:'cadastrar-empresa', component: CadastrarEmpresaComponent},
-    {path:'cadastrar-candidato', component: CadastrarCandidatoComponent}
+    {path:'cadastrar-candidato', component: CadastrarCandidatoComponent},
+    {path:'tema', component: TemaComponent}
   ];
 
 @NgModule({
