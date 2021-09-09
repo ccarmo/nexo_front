@@ -17,6 +17,8 @@ import { TimedevComponent } from './timedev/timedev.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TemaComponent } from './tema/tema.component';
 import { PostagemComponent } from './postagem/postagem.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 
 
 
@@ -34,7 +36,9 @@ import { PostagemComponent } from './postagem/postagem.component';
     TimedevComponent,
     InicioComponent,
     TemaComponent,
-    PostagemComponent
+    PostagemComponent,
+    TemaEditComponent,
+    TemaDeleteComponent
   ],
   imports: [
     BrowserModule,
