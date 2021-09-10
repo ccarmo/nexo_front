@@ -16,28 +16,36 @@ export class PostagemService {
     headers: new HttpHeaders().set('Authorization', environment.token),
   };
   getAllPostagens(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('http://localhost:8080/postagem', this.token)
-  }
-  novaPostagem(postagem: Postagem): Observable<Postagem> {
-
-    return this.http.put<Postagem>('http://localhost:8080​/postagem/novapostagem', Postagem);
-  }
-
-  getByIdPostagem(id: number): Observable<Postagem> {
-    return this.http.get<Postagem>('http://localhost:8080/postagem/id/{id}', this.token)
-  }
-
-  postPostagem(postagem: Postagem): Observable<Postagem> {
-    return this.http.post<Postagem>('http://localhost:8080/postagem/novapostagem', this.token)
+    return this.http.get<Postagem[]>('https://projetonexogen.herokuapp.com/postagem', this.token)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem> {
-    return this.http.put<Postagem>('http://localhost:8080​/postagem​/alterarpostagem', Postagem, this.token)
+    return this.http.put<Postagem>('https://projetonexogen.herokuapp.com/postagem/alterarpostagem', Postagem, this.token)
+  }
+
+  getByIdPostagem(id: number): Observable<Postagem> {
+    return this.http.get<Postagem>(`https://projetonexogen.herokuapp.com/postagem/id/${id}`, this.token)
   }
 
   deletePostagem(id: number) {
-    return this.http.delete(`http://localhost:8080/postagens/id/{id}`, this.token)
+    return this.http.delete(`https://projetonexogen.herokuapp.com/postagem/deletar/${id}`, this.token)
   }
+
+  getByNome (nome: string) {
+    return this.http.get('https://projetonexogen.herokuapp.com/postagem/nome/')
+  }
+
+
+  novaPostagem(postagem: Postagem): Observable<Postagem> {
+
+    return this.http.put<Postagem>('https://projetonexogen.herokuapp.com/postagem/novapostagem', Postagem);
+  }
+
+
+
+
+
+
 
 
 }

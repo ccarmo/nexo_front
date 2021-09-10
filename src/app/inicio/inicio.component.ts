@@ -66,7 +66,7 @@ export class InicioComponent implements OnInit {
     this.usuario.id_usuario = this.idUsuario
     this.postagem.postagemUsuario = this.usuario
 
-    this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
+    this.postagemService.novaPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
 
       this.postagem = new Postagem()
