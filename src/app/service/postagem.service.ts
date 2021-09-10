@@ -15,10 +15,29 @@ export class PostagemService {
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token),
   };
+  getAllPostagens(): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>('http://localhost:8080/postagem', this.token)
+  }
+  novaPostagem(postagem: Postagem): Observable<Postagem> {
 
-  Novapostagem (postagem: Postagem): Observable<Postagem> {
-    
     return this.http.put<Postagem>('http://localhost:8080​/postagem/novapostagem', Postagem);
-}
-}
+  }
 
+  getByIdPostagem(id: number): Observable<Postagem> {
+    return this.http.get<Postagem>('http://localhost:8080/postagem/id/{id}', this.token)
+  }
+
+  postPostagem(postagem: Postagem): Observable<Postagem> {
+    return this.http.post<Postagem>('http://localhost:8080/postagem/novapostagem', this.token)
+  }
+
+  putPostagem(postagem: Postagem): Observable<Postagem> {
+    return this.http.put<Postagem>('http://localhost:8080​/postagem​/alterarpostagem', Postagem, this.token)
+  }
+
+  deletePostagem(id: number) {
+    return this.http.delete(`http://localhost:8080/postagens/id/{id}`, this.token)
+  }
+
+
+}
