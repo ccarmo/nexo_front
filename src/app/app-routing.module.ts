@@ -9,10 +9,13 @@ import { TimedevComponent } from './timedev/timedev.component';
 import { TemaComponent } from './tema/tema.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { MenuComponent } from './menu/menu.component';
+import { SobrenosComponent } from './sobrenos/sobrenos.component';
 
 const routes: Routes = [
 
-    {path: '', redirectTo: 'entrar', pathMatch: 'full'},
+    {path: '', redirectTo: 'menu', pathMatch: 'full'},
+    {path: 'menu', component: MenuComponent},
     {path:'entrar', component: EntrarComponent},
     {path:'home', component: HomeComponent},
     {path:'inicio', component: InicioComponent},
@@ -21,7 +24,8 @@ const routes: Routes = [
     {path:'cadastrar-candidato', component: CadastrarCandidatoComponent},
     {path:'tema', component: TemaComponent},
     {path:'tema-edit/:id', component: TemaEditComponent},
-    {path:'tema-delete/:id', component: TemaDeleteComponent}
+    {path:'tema-delete/:id', component: TemaDeleteComponent},
+    {path:'sobrenos', component: SobrenosComponent}
 
   ];
 

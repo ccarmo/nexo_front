@@ -8,7 +8,8 @@
 
 .menu-nexo {
     color: white;
-    background: url("https://i.ibb.co/JCYZgYy/background1.jpg") no-repeat;
+    /*background: url("https://i.ibb.co/JCYZgYy/background1.jpg") no-repeat;*/
+    background: radial-gradient(circle, rgba(1,106,109,1) 0%, rgba(5,81,107,1) 50%, rgba(4,62,82,1) 100%);
     background-size: cover;
     background-position: bottom;
     padding-bottom: 1px;
