@@ -22,19 +22,19 @@ export class AuthService {
 
   entrar (usuarioDTO: UsuarioDTO): Observable<UsuarioDTO> {
     
-    return this.http.put<UsuarioDTO>('http://localhost:8080/usuario/entrar', usuarioDTO);
+    return this.http.put<UsuarioDTO>('https://projetonexogen.herokuapp.com/usuario/entrar', usuarioDTO);
     
   }
     
   cadastrar (usuario: Usuario): Observable<Usuario>{
     console.log(usuario)
-    return this.http.post<Usuario>('http://localhost:8080/usuario/cadastrar', usuario);
+    return this.http.post<Usuario>('https://projetonexogen.herokuapp.com/usuario/cadastrar', usuario);
     
   }
 
   buscarPorId(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(
-      `http://localhost:8080/usuario/${id}`,this.token
+      `https://projetonexogen.herokuapp.com/usuario/${id}`,this.token
     );
   }
 
