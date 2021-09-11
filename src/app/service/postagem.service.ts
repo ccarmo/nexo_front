@@ -20,7 +20,7 @@ export class PostagemService {
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem> {
-    return this.http.put<Postagem>('https://projetonexogen.herokuapp.com/postagem/alterarpostagem', Postagem, this.token)
+    return this.http.put<Postagem>('https://projetonexogen.herokuapp.com/postagem/alterarpostagem', postagem, this.token)
   }
 
   getByIdPostagem(id: number): Observable<Postagem> {
@@ -28,17 +28,12 @@ export class PostagemService {
   }
 
   deletePostagem(id: number) {
-    return this.http.delete(`https://projetonexogen.herokuapp.com/postagem/deletar/${id}`, this.token)
-  }
-
-  getByNome (nome: string) {
-    return this.http.get('https://projetonexogen.herokuapp.com/postagem/nome/')
+    return this.http.delete(`https://projetonexogen.herokuapp.com/postagem/id/${id}`, this.token)
   }
 
 
   novaPostagem(postagem: Postagem): Observable<Postagem> {
-
-    return this.http.put<Postagem>('https://projetonexogen.herokuapp.com/postagem/novapostagem', Postagem);
+    return this.http.post<Postagem>('https://projetonexogen.herokuapp.com/postagem/novapostagem', postagem, this.token);
   }
 
 

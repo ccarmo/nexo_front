@@ -30,6 +30,7 @@ export class EntrarComponent implements OnInit {
        environment.foto  = this.usuarioDTO.foto
        environment.email = this.usuarioDTO.email
        environment.token = this.usuarioDTO.token
+       environment.id    = this.usuarioDTO.id;
        this.router.navigate(['/inicio'])
     })
    }

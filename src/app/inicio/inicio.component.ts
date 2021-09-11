@@ -20,6 +20,7 @@ export class InicioComponent implements OnInit {
   nome = environment.nome;
   foto = environment.foto;
   email = environment.email;
+
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
   tituloPost: string
@@ -38,14 +39,15 @@ export class InicioComponent implements OnInit {
 
   ngOnInit() {
     if (environment.token == '') {
-      alert('Sua seção expirou, faça o login novamente.')
+      alert('Sua sessão expirou, faça o login novamente.')
       this.router.navigate(['/entrar'])
-      this.getAllTemas()
-      this.getAllPostagens()
     }
+    this.getAllTemaInicio()
+    this.getAllPostagens()
+    console.log(environment.id)
   }
-  getAllTemas() {
-    this.temaService.getAllTema().subscribe((resp: Tema[]) => {
+  getAllTemaInicio() {
+    this.temaService.getAllTema().subscribe((resp: Tema[])=>{
       this.listaTemas = resp
     })
   }
@@ -54,21 +56,22 @@ export class InicioComponent implements OnInit {
       this.listaPostagens = resp
     })
   }
-  buscarPorId() {
-    this.authService.buscarPorId(this.idUsuario).subscribe((resp: Usuario) => {
-      this.usuario = resp
+  findByIdTema(){
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) =>{
+      this.tema = resp
     })
   }
   publicar() {
+ 
     this.tema.id = this.idTema
     this.postagem.postagemTema = this.tema
-
+    
     this.usuario.id_usuario = this.idUsuario
     this.postagem.postagemUsuario = this.usuario
 
     this.postagemService.novaPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-
+      alert('Postagem realizada com sucesso')
       this.postagem = new Postagem()
       this.getAllPostagens()
     })
