@@ -31,6 +31,9 @@ export class InicioComponent implements OnInit {
   idTema: number
   nomeTema: string
 
+  key = 'data'
+  reverse = true
+
   constructor(
     private authService: AuthService,
     private router: Router,
