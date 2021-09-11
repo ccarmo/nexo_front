@@ -14,6 +14,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { MenuComponent } from './menu/menu.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 
+
 const routes: Routes = [
 
     {path: '', redirectTo: 'menu', pathMatch: 'full'},
@@ -29,7 +30,8 @@ const routes: Routes = [
     {path:'tema-delete/:id', component: TemaDeleteComponent},
     {path:'postagem-edit/:id', component: PostagemEditComponent},
     {path:'postagem-delete/:id', component: PostagemDeleteComponent},
-    {path:'sobrenos', component: SobrenosComponent}
+    {path:'sobrenos', component: SobrenosComponent},
+
 
 
   ];

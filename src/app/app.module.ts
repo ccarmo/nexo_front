@@ -20,6 +20,9 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -42,6 +45,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     TemaDeleteComponent,
     PostagemEditComponent,
     PostagemDeleteComponent,
+    AlertasComponent,
+
 
   ],
   imports: [
@@ -49,7 +54,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
     FontAwesomeModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
