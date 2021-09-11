@@ -11,10 +11,13 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
+import { MenuComponent } from './menu/menu.component';
+import { SobrenosComponent } from './sobrenos/sobrenos.component';
 
 const routes: Routes = [
 
-    {path: '', redirectTo: 'entrar', pathMatch: 'full'},
+    {path: '', redirectTo: 'menu', pathMatch: 'full'},
+    {path: 'menu', component: MenuComponent},
     {path:'entrar', component: EntrarComponent},
     {path:'home', component: HomeComponent},
     {path:'inicio', component: InicioComponent},
@@ -25,7 +28,9 @@ const routes: Routes = [
     {path:'tema-edit/:id', component: TemaEditComponent},
     {path:'tema-delete/:id', component: TemaDeleteComponent},
     {path:'postagem-edit/:id', component: PostagemEditComponent},
-    {path:'postagem-delete/:id', component: PostagemDeleteComponent}
+    {path:'postagem-delete/:id', component: PostagemDeleteComponent},
+    {path:'sobrenos', component: SobrenosComponent}
+
 
   ];
 
