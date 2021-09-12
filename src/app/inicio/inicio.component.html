@@ -78,8 +78,7 @@
             <div class="d-flex flex-column align-items-center text-center">
               <h4>Configurações</h4>
 
-              <button type="button" class="btn-link" title=""
-                data-toggle="tooltip" data-original-title="Editar">
+              <button type="button" class="btn-link" title="" data-toggle="tooltip" data-original-title="Editar">
                 <h6>Editar usuário</h6>
               </button>
 
@@ -93,85 +92,152 @@
       <div class="col-lg-8">
 
         <div class="panel">
-          <div class="panel-heading">
-            <h3 class="panel-title">Feed de notícias</h3>
-          </div>
 
-          <div class="form-group">
-            <!-- -->
-            <label for="texto">Escolha um tema: </label>
-            <select name="tema" id="tema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema()'>
-              <option *ngFor='let tema of listaTemas' value="{{tema.id}}">{{tema.nomeTema}}</option>
-            </select>
-            <button type="button" class=" btn btn-light P-3 " data-bs-dismiss="modal" routerLink='/tema'>Ou cadastre um
-              novo tema</button>
+          <div class="card panel-content panel-activity">
 
-          </div>
+            <div class="form-group">
+              <!-- -->
+              <label for="texto">Escolha um tema:</label>
+              <select name="tema" id="tema" class="form-control mb-3" [(ngModel)]='idTema' (change)='findByIdTema()'>
+                <option *ngFor='let tema of listaTemas' value="{{tema.id}}">{{tema.nomeTema}}</option>
+              </select>
 
-          <div class="form-group">
-            <label for="texto">Escolha um título: </label>
-            <input [(ngModel)]='postagem.nomePostagem' type="text" class="form-control" id="titulo"
-              placeholder="Digite o título do texto">
+              <button type="button" class="btn btn-sm btn-rounded btn-info " data-bs-dismiss="modal"
+                routerLink='/tema'>Ou
+                cadastre um
+                novo tema</button>
 
 
+            </div>
 
-          </div>
+            <div class="form-group mb-3 mt-3">
+              <label for="texto">Título: </label>
+              <input [(ngModel)]='postagem.nomePostagem' type="text" class="form-control" id="titulo"
+                placeholder="Digite o título do texto">
 
-          <div class="panel-content panel-activity">
+
+
+            </div>
+
             <form class="panel-activity__status mb-5">
               <textarea [(ngModel)]='postagem.pitch' name="user_activity" placeholder="Escreva seu texto aqui..."
                 class="form-control"></textarea>
-              <div class="actions">
-                <div class="btn-group">
-                  <button type="button" class="btn-link" title="" data-toggle="tooltip"
-                    data-original-title="Post an Image">
-                    <i class="fa fa-image"></i>
-                  </button>
-                  <button type="button" class="btn-link" title="" data-toggle="tooltip"
-                    data-original-title="Post an Video">
-                    <i class="fa fa-video-camera"></i>
-                  </button>
-                  <button type="button" class="btn-link" title="" data-toggle="tooltip"
-                    data-original-title="Post an Idea">
-                    <i class="fa fa-lightbulb-o"></i>
-                  </button>
-                  <button type="button" class="btn-link" title="" data-toggle="tooltip"
-                    data-original-title="Post an Question">
-                    <i class="fa fa-question-circle-o"></i>
-                  </button>
-                </div>
+              <div class="actions d-flex align-items-end flex-column">
+
                 <button type="submit" class="btn btn-sm btn-rounded btn-info" (click)='publicar()'>
                   Postar
                 </button>
               </div>
             </form>
 
-            <div class="class-columns">
-              <div class="card text-center mb-5" *ngFor='let postagem of listaPostagens | orderBy : key : reverse'>
-                <div class="card-header">
-                  <ul class="nav nav-pills card-header-pills">
-                    <button [routerLink]="['/postagem-edit', postagem.id_postagem]" type="button" class="btn-link"
-                      title="" data-toggle="tooltip" data-original-title="Editar">
-                      <i class="fa fa-edit"></i>
-                    </button>
-                    <button [routerLink]="['/postagem-delete', postagem.id_postagem]" type="button" class="btn-link"
-                      title="" data-toggle="tooltip" data-original-title="Excluir">
-                      <i class="fa fa-trash"></i>
-                    </button>
+          </div>
 
-                  </ul>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">{{postagem.nomePostagem}}</h5>
-                  <p class="card-text">{{postagem.pitch}}</p>
+          <div class="container mb-5 mt-5">
 
-                </div>
-                <div class="card-footer text-muted">
-                  {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
+            <nav>
+              <div class="nav nav-tabs d-flex justify-content-center " id="nav-tab" role="tablist">
+                <button class="nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab"
+                  data-bs-toggle="tab" data-bs-target="#todasPostagens" type="button" role="tab"
+                  aria-controls="nav-todasPostagens" aria-selected="true">Todas as postagens</button>
+                <button (click)='findByIdUsuario()' class="nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab"
+                  data-bs-toggle="tab" data-bs-target="#minhasPostagens" type="button" role="tab"
+                  aria-controls="nav-minhasPostagens" aria-selected="false">Minhas postagens</button>
+                <button class="nav-link text-secondary font-weight-bold" id="nav-postagensPorTema-tab"
+                  data-bs-toggle="tab" data-bs-target="#postagensPorTema" type="button" role="tab"
+                  aria-controls="nav-postagensPorTema" aria-selected="false">Postagens por tema</button>
+              </div>
+            </nav>
 
+            <div class="tab-content mt-5" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+                aria-labelledby="nav-todasPostagens-tab">
+                <div class="class-columns mb-5 mt-5">
+                  <div class="card text-center mb-5" *ngFor='let postagem of listaPostagens | orderBy : key : reverse'>
+                    <div class="card-header">
+
+                      <div>
+                        <h5 class="card-title">{{postagem.nomePostagem}}</h5>
+                      </div>
+
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{postagem.postagemTema.nomeTema}}</h5>
+                      <p class="card-text">{{postagem.pitch}}</p>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                      <div class="box">
+                        <div>
+                          <button type="button" class="btn-link"
+                            title="" data-toggle="tooltip" data-original-title="Curtir">
+                            <i class="fa fa-thumbs-up"></i>
+                          </button>
+                        </div>
+                        <div>
+                          <button type="button"
+                            class="btn-link" title="" data-toggle="tooltip" data-original-title="Email">
+                            <i class="fa fa-envelope"></i>
+                          </button>
+                        </div>
+                        <div class="push">
+                          {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
+
+              </div>
+              <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+
+                <div class="class-columns mb-5 mt-5">
+                  <div class="card text-center mb-5" *ngFor='let postagem of usuario.postagem | orderBy : key : reverse'>
+                    <div class="card-header">
+
+                      <div>
+                        <h5 class="card-title">{{postagem.nomePostagem}}</h5>
+                      </div>
+
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text">{{postagem.pitch}}</p>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                      <div class="box">
+                        <div>
+                          <button [routerLink]="['/postagem-edit', postagem.id_postagem]" type="button" class="btn-link"
+                            title="" data-toggle="tooltip" data-original-title="Editar">
+                            <i class="fas fa-edit"></i>
+                          </button>
+                        </div>
+                        <div>
+                          <button [routerLink]="['/postagem-delete', postagem.id_postagem]" type="button"
+                            class="btn-link" title="" data-toggle="tooltip" data-original-title="Excluir">
+                            <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </div>
+                        <div class="push">
+                          {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="tab-pane fade" id="postagensPorTema" role="tabpanel"
+                aria-labelledby="nav-postagensPorTema-tab">
+                Postagens por tema
               </div>
             </div>
+
+
+
           </div>
         </div>
       </div>

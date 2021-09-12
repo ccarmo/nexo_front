@@ -29,6 +29,18 @@ body{
     padding: 1rem;
 }
 
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+  }
+
+
+  .push {
+      margin-left: auto;
+  }
+
 .gutters-sm {
     margin-right: -8px;
     margin-left: -8px;

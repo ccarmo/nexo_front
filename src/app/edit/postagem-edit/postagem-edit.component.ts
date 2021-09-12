@@ -34,6 +34,7 @@ export class PostagemEditComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     let id = this.route.snapshot.params['id']
+    this.findByIdPostagem(id)
     this.findAllTemas()
   }
 
