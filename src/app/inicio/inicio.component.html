@@ -21,6 +21,7 @@
         <div class="card mt-3">
           <div class="card mb-3">
             <div class="card-body">
+              <h4 class="text-center">Dados usuário</h4>
               <div class="row">
                 <div class="col-sm-4">
                   <h6 class="mb-0">Nome</h6>
@@ -64,19 +65,28 @@
                 <div class="col-sm-9 text-secondary">
                   PRECISA COLOCAR NO BACKEND
                 </div>
+
               </div>
               <hr>
-              <!--
-              <div class="row">
-                <div class="col-sm-12">
-                  <a class="btn btn-info " target="__blank"
-                    href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a>
-                </div>
-              </div>
-              -->
             </div>
           </div>
 
+        </div>
+
+        <div class="card mt-3">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <h4>Configurações</h4>
+
+              <button type="button" class="btn-link" title=""
+                data-toggle="tooltip" data-original-title="Editar">
+                <h6>Editar usuário</h6>
+              </button>
+
+
+
+            </div>
+          </div>
         </div>
 
       </div>
@@ -137,13 +147,15 @@
             </form>
 
             <div class="class-columns">
-              <div class="card text-center mb-5" *ngFor='let postagem of listaPostagens'>
+              <div class="card text-center mb-5" *ngFor='let postagem of listaPostagens | orderBy : key : reverse'>
                 <div class="card-header">
                   <ul class="nav nav-pills card-header-pills">
-                    <button [routerLink]="['/postagem-edit', postagem.id_postagem]" type="button" class="btn-link" title="" data-toggle="tooltip" data-original-title="Editar">
+                    <button [routerLink]="['/postagem-edit', postagem.id_postagem]" type="button" class="btn-link"
+                      title="" data-toggle="tooltip" data-original-title="Editar">
                       <i class="fa fa-edit"></i>
                     </button>
-                    <button [routerLink]="['/postagem-delete', postagem.id_postagem]" type="button" class="btn-link" title="" data-toggle="tooltip" data-original-title="Excluir">
+                    <button [routerLink]="['/postagem-delete', postagem.id_postagem]" type="button" class="btn-link"
+                      title="" data-toggle="tooltip" data-original-title="Excluir">
                       <i class="fa fa-trash"></i>
                     </button>
 
@@ -159,111 +171,7 @@
 
                 </div>
               </div>
-
-
             </div>
-            <!--
-                <ul class="panel-activity__list">
-                    <li>
-                        <i class="activity__list__icon fa fa-question-circle-o"></i>
-                        <div class="activity__list__header">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
-                            <a href="#">John Doe</a> Posted the question: <a href="#">How can I change my annual reports for the better effect?</a>
-                        </div>
-                        <div class="activity__list__body entry-content">
-                            <p>
-                                <strong>Lorem ipsum dolor sit amet</strong>, consectetur adipisicing elit. Voluptatibus ab a nostrum repudiandae dolorem ut quaerat veniam asperiores, rerum voluptatem magni dolores corporis!
-                                <em>Molestiae commodi nesciunt a, repudiandae repellendus ea.</em>
-                            </p>
-                        </div>
-                        <div class="activity__list__footer">
-                            <a href="#"> <i class="fa fa-thumbs-up"></i>123</a>
-                            <a href="#"> <i class="fa fa-comments"></i>23</a>
-                            <span> <i class="fa fa-clock"></i>2 hours ago</span>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="activity__list__icon fa fa-question-circle-o"></i>
-                        <div class="activity__list__header">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
-                            <a href="#">John Doe</a> Posted the question: <a href="#">How can I change my annual reports for the better effect?</a>
-                        </div>
-                        <div class="activity__list__body entry-content">
-                            <blockquote>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus ab a nostrum repudiandae dolorem ut quaerat veniam asperiores, rerum voluptatem magni dolores corporis! Molestiae commodi nesciunt a,
-                                    repudiandae repellendus ea.
-                                </p>
-                            </blockquote>
-                        </div>
-                        <div class="activity__list__footer">
-                            <a href="#"> <i class="fa fa-thumbs-up"></i>123</a>
-                            <a href="#"> <i class="fa fa-comments"></i>23</a>
-                            <span> <i class="fa fa-clock"></i>2 hours ago</span>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="activity__list__icon fa fa-image"></i>
-                        <div class="activity__list__header">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
-                            <a href="#">John Doe</a> Uploaded 4 Image: <a href="#">Office Working Time</a>
-                        </div>
-                        <div class="activity__list__body entry-content">
-                            <ul class="gallery">
-                                <li>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
-                                </li>
-                                <li>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
-                                </li>
-                                <li>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" />
-                                </li>
-                                <li>
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" />
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="activity__list__footer">
-                            <a href="#"> <i class="fa fa-thumbs-up"></i>123</a>
-                            <a href="#"> <i class="fa fa-comments"></i>23</a>
-                            <span> <i class="fa fa-clock"></i>2 hours ago</span>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="activity__list__icon fa fa-question-circle-o"></i>
-                        <div class="activity__list__header">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
-                            <a href="#">John Doe</a> Posted the question: <a href="#">How can I change my annual reports for the better effect?</a>
-                        </div>
-                        <div class="activity__list__body entry-content">
-                            <blockquote>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus ab a nostrum repudiandae dolorem ut quaerat veniam asperiores, rerum voluptatem magni dolores corporis! Molestiae commodi nesciunt a,
-                                    repudiandae repellendus ea.
-                                </p>
-                            </blockquote>
-                        </div>
-                        <div class="activity__list__footer">
-                            <a href="#"> <i class="fa fa-thumbs-up"></i>123</a>
-                            <a href="#"> <i class="fa fa-comments"></i>23</a>
-                            <span> <i class="fa fa-clock"></i>2 hours ago</span>
-                        </div>
-                    </li>
-                    <li>
-                        <i class="activity__list__icon fa fa-lightbulb-o"></i>
-                        <div class="activity__list__header">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
-                            <a href="#">John Doe</a> bookmarked a page: <a href="#">Awesome Idea</a>
-                        </div>
-                        <div class="activity__list__footer">
-                            <a href="#"> <i class="fa fa-thumbs-up"></i>123</a>
-                            <a href="#"> <i class="fa fa-comments"></i>23</a>
-                            <span> <i class="fa fa-clock"></i>2 hours ago</span>
-                        </div>
-                    </li>
-                </ul>
-              -->
           </div>
         </div>
       </div>

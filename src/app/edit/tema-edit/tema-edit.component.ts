@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TemaService } from './../../service/tema.service';
 import { Tema } from './../../model/Tema';
 import { Component, OnInit } from '@angular/core';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-tema-edit',
@@ -16,7 +17,8 @@ export class TemaEditComponent implements OnInit {
   constructor(
     private temaService: TemaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
     
   ) { }
 
@@ -26,9 +28,8 @@ export class TemaEditComponent implements OnInit {
     }
 
     let id = this.route.snapshot.params['id']
-    console.log("id "+id)
     this.findByIdTema(id)
-    console.log("this.tema "+this.tema)
+    
 
   }
 
@@ -41,7 +42,7 @@ export class TemaEditComponent implements OnInit {
   atualizar(){
     this.temaService.putTema(this.tema).subscribe((resp: Tema)=>{
       this.tema = resp
-      alert('Tema atualizado com sucesso!')
+      this.alertas.showAlertInfo('Tema atualizado!')
       this.router.navigate(['/tema'])
   })
 }

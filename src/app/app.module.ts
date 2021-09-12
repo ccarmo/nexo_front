@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
-
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 import { AppComponent } from './app.component';
 import { CadastrarCandidatoComponent } from './cadastrar-candidato/cadastrar-candidato.component';
 import { CadastrarEmpresaComponent } from './cadastrar-empresa/cadastrar-empresa.component';
@@ -22,10 +23,7 @@ import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.compon
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UtilidadesComponent } from './utilidades/utilidades.component';
 import { TestemunhosComponent } from './testemunhos/testemunhos.component';
-
-
-
-
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +44,8 @@ import { TestemunhosComponent } from './testemunhos/testemunhos.component';
     PostagemDeleteComponent,
     UtilidadesComponent,
     TestemunhosComponent,
+    AlertasComponent,
+
 
   ],
   imports: [
@@ -53,7 +53,9 @@ import { TestemunhosComponent } from './testemunhos/testemunhos.component';
     FontAwesomeModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
