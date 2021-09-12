@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ngModuleJitUrl } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -32,5 +33,10 @@ export class TemaService {
   }
   deleteTema(id: number){
   return this.http.delete(`https://projetonexogen.herokuapp.com/tema/id/${id}`, this.token)
+  }
+
+  getByNomeTema(nomeTema: string): Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://projetonexogen.herokuapp.com/tema/nome/${nomeTema}`, this.token)
+
   }
 }

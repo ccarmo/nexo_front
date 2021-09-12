@@ -36,6 +36,9 @@ export class PostagemService {
     return this.http.post<Postagem>('https://projetonexogen.herokuapp.com/postagem/novapostagem', postagem, this.token);
   }
 
+  getByNomePostagem(titulo: string): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`https://projetonexogen.herokuapp.com/postagem/nome/${titulo}`, this.token)
+  }
 
 
 

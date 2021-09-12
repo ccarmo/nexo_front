@@ -39,35 +39,9 @@
                   {{email}}
                 </div>
               </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-4">
-                  <h6 class="mb-0">Telefone</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  PRECISA COLOCAR NO BACKEND
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-4">
-                  <h6 class="mb-0">Celular</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  PRECISA COLOCAR NO BACKEND
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-sm-4">
-                  <h6 class="mb-0">Endereço</h6>
-                </div>
-                <div class="col-sm-9 text-secondary">
-                  PRECISA COLOCAR NO BACKEND
-                </div>
+   
 
-              </div>
-              <hr>
+ 
             </div>
           </div>
 
@@ -139,9 +113,9 @@
                 <button class="nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab"
                   data-bs-toggle="tab" data-bs-target="#todasPostagens" type="button" role="tab"
                   aria-controls="nav-todasPostagens" aria-selected="true">Todas as postagens</button>
-                <button (click)='findByIdUsuario()' class="nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab"
-                  data-bs-toggle="tab" data-bs-target="#minhasPostagens" type="button" role="tab"
-                  aria-controls="nav-minhasPostagens" aria-selected="false">Minhas postagens</button>
+                <button (click)='findByIdUsuario()' class="nav-link text-secondary font-weight-bold"
+                  id="nav-minhasPostagens-tab" data-bs-toggle="tab" data-bs-target="#minhasPostagens" type="button"
+                  role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas postagens</button>
                 <button class="nav-link text-secondary font-weight-bold" id="nav-postagensPorTema-tab"
                   data-bs-toggle="tab" data-bs-target="#postagensPorTema" type="button" role="tab"
                   aria-controls="nav-postagensPorTema" aria-selected="false">Postagens por tema</button>
@@ -151,6 +125,17 @@
             <div class="tab-content mt-5" id="nav-tabContent">
               <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
                 aria-labelledby="nav-todasPostagens-tab">
+
+
+                <div class="row d-flex justify-content-center mt-5 mb-5">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="titulo"
+                        placeholder="Digite um titulo para pesquisar" [(ngModel)]='tituloPost'
+                        (keyup)='findByTituloPostagem()'>
+                    </div>
+                  </div>
+                </div>
                 <div class="class-columns mb-5 mt-5">
                   <div class="card text-center mb-5" *ngFor='let postagem of listaPostagens | orderBy : key : reverse'>
                     <div class="card-header">
@@ -161,26 +146,27 @@
 
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title">{{postagem.postagemTema.nomeTema}}</h5>
+                      <small class="text-muted">Tema: {{postagem.postagemTema.nomeTema}}</small>
                       <p class="card-text">{{postagem.pitch}}</p>
 
                     </div>
                     <div class="card-footer text-muted">
                       <div class="box">
                         <div>
-                          <button type="button" class="btn-link"
-                            title="" data-toggle="tooltip" data-original-title="Curtir">
+                          <button type="button" class="btn-link" title="" data-toggle="tooltip"
+                            data-original-title="Curtir">
                             <i class="fa fa-thumbs-up"></i>
                           </button>
                         </div>
                         <div>
-                          <button type="button"
-                            class="btn-link" title="" data-toggle="tooltip" data-original-title="Email">
+                          <button type="button" class="btn-link" title="" data-toggle="tooltip"
+                            data-original-title="Email">
                             <i class="fa fa-envelope"></i>
                           </button>
                         </div>
                         <div class="push">
-                          {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
+                          por: {{postagem.postagemUsuario.nome}} {{postagem.data | date: 'dd/MM/yyyy'}} às
+                          {{postagem.data | date: 'HH:mm'}}
                         </div>
 
                       </div>
@@ -193,7 +179,8 @@
               <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
 
                 <div class="class-columns mb-5 mt-5">
-                  <div class="card text-center mb-5" *ngFor='let postagem of usuario.postagem | orderBy : key : reverse'>
+                  <div class="card text-center mb-5"
+                    *ngFor='let postagem of usuario.postagem | orderBy : key : reverse'>
                     <div class="card-header">
 
                       <div>
@@ -202,7 +189,7 @@
 
                     </div>
                     <div class="card-body">
-                      <h5 class="card-title"></h5>
+
                       <p class="card-text">{{postagem.pitch}}</p>
 
                     </div>
@@ -232,7 +219,53 @@
               </div>
               <div class="tab-pane fade" id="postagensPorTema" role="tabpanel"
                 aria-labelledby="nav-postagensPorTema-tab">
-                Postagens por tema
+
+                <div class="row d-flex justify-content-center mt-5 mb-5">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="nometema"
+                        placeholder="Digite um tema para pesquisar" [(ngModel)]='descricaoTema'
+                        (keyup)='findByNomeTema()'>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="class-columns mb-5 mt-5" *ngFor='let tema of listaTemas'>
+                  <div class="card text-center mb-5" *ngFor='let postagem of tema.listaPostagem | orderBy : key : reverse'>
+                    <div class="card-header">
+
+                      <div>
+                        <h5 class="card-title">{{postagem.nomePostagem}}</h5>
+                      </div>
+
+                    </div>
+                    <div class="card-body">
+                      <small class="text-muted">Tema: {{tema.nomeTema}}</small>
+                      <p class="card-text">{{postagem.pitch}}</p>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                      <div class="box">
+                        <div>
+                          <button type="button" class="btn-link" title="" data-toggle="tooltip"
+                            data-original-title="Curtir">
+                            <i class="fa fa-thumbs-up"></i>
+                          </button>
+                        </div>
+                        <div>
+                          <button type="button" class="btn-link" title="" data-toggle="tooltip"
+                            data-original-title="Email">
+                            <i class="fa fa-envelope"></i>
+                          </button>
+                        </div>
+                        <div class="push">
+                          {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 

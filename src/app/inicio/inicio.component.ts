@@ -29,7 +29,7 @@ export class InicioComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
-  nomeTema: string
+  descricaoTema: string
 
   key = 'data'
   reverse = true
@@ -71,6 +71,26 @@ export class InicioComponent implements OnInit {
     this.authService.buscarPorId(this.idUsuario).subscribe((resp: Usuario) => {
       this.usuario = resp   
     })
+  }
+
+  findByTituloPostagem(){
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    } else {
+      this.postagemService.getByNomePostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+  }
+
+  findByNomeTema(){
+    if(this.descricaoTema == ''){
+      this.getAllTemaInicio()
+    } else {
+      this.temaService.getByNomeTema(this.descricaoTema).subscribe((resp: Tema[]) => {
+        this.listaTemas = resp
+      })
+    }
   }
 
   
