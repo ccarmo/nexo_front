@@ -1,0 +1,86 @@
+body
+{
+    width: 1920px;
+    height: 1080px;
+    font-family: sans-serif;
+    background: radial-gradient(circle, rgba(1,106,109,1) 0%, rgba(5,81,107,1) 50%, rgba(4,62,82,1) 100%);
+    width: 100%;
+     height: 1000%;
+    background-size: contain;
+}
+.titulo-secao {
+  font-size:20px;
+  max-width:500px;
+  margin:0 auto;
+  color:#bdc0c2;
+}
+.depoimentos
+{
+    margin: 200px auto 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-gap: 20px;
+}
+.depoimentos .cartao
+{
+    position: relative;
+    width:350px;
+    margin: 0 auto;
+    background:#333;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    overflow: hidden;
+}
+.depoimentos .cartao .camada
+{
+    position: absolute;
+    top:calc(100% - 4px);
+    left:0;
+    width:100%;
+    height: 100%;
+    background: linear-gradient(#0e4057, #024786);
+    z-index: 1;
+    transition: 0.5s;
+}
+.depoimentos .cartao:hover .camada
+{
+   top: 0;
+}
+.depoimentos .cartao .conteudo
+{
+   position: relative;
+   z-index: 2;
+}
+.depoimentos .cartao .conteudo p
+{
+   font-size: 18px;
+   line-height: 24px;
+   color:#bdc0c2;
+}
+.depoimentos .cartao .conteudo .foto
+{
+   width: 140px;
+   height: 140px;
+   margin: 0 auto;
+   border-radius: 60%;
+   overflow: hidden;
+   border: 4px solid rgba(255, 255, 255, 0.521);
+   box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+.depoimentos .cartao .conteudo .detalhes h2
+{ 
+   font-size: 18px;
+   color: #bdc0c2;
+}
+.depoimentos .cartao .conteudo .detalhes h2 span
+{
+    color: #bdc0c2;
+    font-size: 14px;
+    transition: 0.5s;
+}
+.depoimentos .cartao:hover .conteudo .detalhes h2 span
+{
+    color: #bdc0c2;;
+}

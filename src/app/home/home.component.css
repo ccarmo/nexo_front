@@ -1,27 +1,25 @@
 
 .menu-nexo {
-    color: white;
-    background: url("https://i.ibb.co/JCYZgYy/background1.jpg") no-repeat;
-    min-height: 695px;
+    color: #bdc0c2;
+    background: url("https://i.ibb.co/JCYZgYy/background1.jpg");
     background-size: cover;
-    background-position: bottom;
     padding-bottom: 1px;
+    
 }
-.menu-nexo .hero {
+.menu-nexo .texto {
     text-align: center;
     margin-top: 80px;
     margin-bottom: 100px;
 }
 
-.menu-nexo .hero h1 {
-    color: white;
+.menu-nexo .texto h1 {
+    color: #eaeef1;
     font-weight: bold;
     font-size: 60px;
     margin-bottom: 36px;
 }
 
-
-.menu-nexo .hero p {
+.menu-nexo .texto p {
     color: rgba(255, 255, 255, 0.6);
     font-size: 18px;
     max-width: 660px;
@@ -29,7 +27,7 @@
     font-weight: normal;
     line-height: 1.5;
 }
-.menu-nexo .btn-primary {
+.menu-nexo .primeiro-botao {
     color: #fff;
     background-color: transparent;
     border-color: #fffbfb !important;
@@ -41,42 +39,27 @@
     transition:0.2s background-color;
 }
 
-.menu-nexo .btn-primary:hover {
+.menu-nexo .primeiro-botao:hover {
     background-color:rgba(255,255,255,0.1);
 }
 
-.menu-nexo .btn-primary:active {
+.menu-nexo .primeiro-botao:active {
     transform:translateY(1px);
 }
-
+/*item responsivo*/
 @media screen and (max-width: 767px) {
 
-    .menu-nexo .navbar-default .navbar-nav .open .dropdown-menu>li>a{
+    .menu-nexo {
         color: #fff;
         font-size: 16px;
     }
 
-    .menu-nexo .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
+    .menu-nexo :hover{
         color: #ccc;
     }
 
-    .menu-nexo .navbar-collapse {
-        margin-left: 20px;
-        border-top: none;
-        box-shadow: none;
-    }
-
-    .menu-nexo .hero{
+    .menu-nexo .texto{
         margin-top: 40px;
         margin-bottom: 40px;
     }
-
-    .header-nightsky .hero h1{
-        font-size: 42px;
-    }   
-    #logo {
-        width: 150px;
-        height: 50px;
-    }
-
 }

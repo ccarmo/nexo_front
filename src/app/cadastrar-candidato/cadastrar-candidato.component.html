@@ -1,67 +1,40 @@
-
-<div class="container-fluid">
-    <div class="row d-flex justify-content-center">
-        <!--col-->
-        <div class="col-md-6 mt-3">
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-10 bg-light">
-                    
-                    <h2 class="text-center mt-2">Cadastro Candidato</h2>
-
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- CAMINHO CSS -->
+    <link href="..\..\app\cadastrar-candidato\cadastrar-candidato.component.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- FONTES EXTERNAS -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">       
+    </head>
+    
+    <body>
+        <!-- main -->
+        <div class="layout-principal wrapper">
+            <h1><img src="https://i.imgur.com/5LQBQKL.png m-10px" width="150px" height="50px" alt="Logo-No-sem-fundo"></h1>
+            <div class="cadastro-principal">
+                <div class="cadastro-corpo">
+                    <form action="#" method="post">
                         <input [(ngModel)]='usuario.nome' type="text" class="form-control" name="nome" placeholder="Nome" id="nome"> 
-                    </div>
-                    <!--form-->
-                   
-                    <div class="form-group">
-                        <label for="idade">Idade</label>
-                        <input [(ngModel)]='usuario.idade' type="number" class="form-control" name="idade" placeholder="idade" id="idade">
-                    </div>
-                    <!--form-->
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
+                        <input [(ngModel)]='usuario.idade' type="text" class="form-control" name="idade" placeholder="idade" id="idade">
                         <input [(ngModel)]='usuario.email' type="text" class="form-control" name="email" placeholder="Email" id="email">
-                    </div>
-                    <!--form-->
-
-                    <div class="form-group">
-                        <label for="usuario">Foto</label>
                         <input [(ngModel)]='usuario.foto' type="text"  class="form-control" name="foto" placeholder="Link da foto" id="foto">
-                    </div>
-                    <!--form-->
-                  
-                    <div class="form-group">
-                        <label for="renda familiar"> Renda Familiar</label>
-                        <input [(ngModel)]='usuario.renda_familiar' type="number" class="form-control" name="renda familiar" placeholder="Renda Familiar" id="renda familiar">
-                    </div>
-                    <!--form-->
-
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input (input)='confirmSenha($event)' type="password" class="form-control" name="senha" placeholder="Password" id="senha">
-                    </div>
-                    <!--form-->
-
-                    <div class="form-group">
-                        <label for="confirmSenha">Confirmar senha</label>
-                        <input [(ngModel)]='usuario.senha' type="password" class="form-control" name="confirmSenha" placeholder="Confirm password"
-                        id="confirmSenha">
-                    </div>
-                    <!--form-->
-
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-danger mr-4" routerLink='/menu' >Cancelar</button>
-                        <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
-                    </div>
-                    <!--button-->
-
+                        <input [(ngModel)]='usuario.renda_familiar' type="text" class="form-control" name="renda familiar" placeholder="Renda familiar" id="renda familiar" >
+                        <input (input)='confirmSenha($event)' type="password" class="form-control" name="senha" placeholder="Senha" id="senha">
+                        <input [(ngModel)]='usuario.senha' type="password" class="form-control" name="confirmSenha" placeholder="Confirme a senha">
+                        <div class="wthree-text">
+                            <div class="clear"> </div>
+                        </div>
+                        <input type="submit" class="btn btn-success" (click)='cadastrar()' value="CADASTRAR">
+                    </form>
+                    <p>Já possui uma conta ? <a routerLink='/entrar'> Entre agora!</a></p>
                 </div>
             </div>
-            <!--row-->
+            <!-- footer cadastro -->
+            <div class="footer-copyrigth bg-transparent - text-center py-3">
+                <span class="text-light"> © 2021 Copyright: </span>
+                <a class="text-light" target="_blank" href="https://brasil.generation.org">Generation Brasil</a>
+            </div>
+            <!-- //footer cadastro -->
         </div>
-        <!--col-->
-    </div>
-</div>
-
+    </body>
+ 
