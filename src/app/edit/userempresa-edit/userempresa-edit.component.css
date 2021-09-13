@@ -1,0 +1,10 @@
+.btn-space {
+    margin-right: 5px;
+}
+
+.container {
+    background: rgb(1,106,109);
+    background: radial-gradient(circle, rgba(1,106,109,1) 0%, rgba(5,81,107,1) 50%, rgba(4,62,82,1) 100%);
+    background-size: cover;
+    background-attachment: fixed;
+}

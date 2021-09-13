@@ -52,7 +52,11 @@
             <div class="d-flex flex-column align-items-center text-center">
               <h4>Configurações</h4>
 
-              <button type="button" class="btn-link" title="" data-toggle="tooltip" data-original-title="Editar">
+              <button *ngIf='logadoEmpresa() === true' [routerLink]="['/userempresa-edit', idUsuario]" type="button" class="btn-link" title="" data-toggle="tooltip" data-original-title="Editar">
+                <h6>Editar usuário</h6>
+              </button>
+
+              <button *ngIf='logadoCandidato() === true' [routerLink]="['/usercandidato-edit', idUsuario]" type="button" class="btn-link" title="" data-toggle="tooltip" data-original-title="Editar">
                 <h6>Editar usuário</h6>
               </button>
 
@@ -189,7 +193,7 @@
 
                     </div>
                     <div class="card-body">
-
+                      <small class="text-muted">Tema: {{postagem.nomeTema}}</small>
                       <p class="card-text">{{postagem.pitch}}</p>
 
                     </div>
@@ -198,17 +202,18 @@
                         <div>
                           <button [routerLink]="['/postagem-edit', postagem.id_postagem]" type="button" class="btn-link"
                             title="" data-toggle="tooltip" data-original-title="Editar">
-                            <i class="fas fa-edit"></i>
+                            <i class="fa fa-edit"></i>
                           </button>
                         </div>
                         <div>
                           <button [routerLink]="['/postagem-delete', postagem.id_postagem]" type="button"
                             class="btn-link" title="" data-toggle="tooltip" data-original-title="Excluir">
-                            <i class="fas fa-trash-alt"></i>
+                            <i class="fa fa-trash-alt"></i>
                           </button>
                         </div>
                         <div class="push">
-                          {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
+                          por: {{usuario.nome}} {{postagem.data | date: 'dd/MM/yyyy'}} às
+                          {{postagem.data | date: 'HH:mm'}}
                         </div>
 
                       </div>
@@ -259,6 +264,7 @@
                           </button>
                         </div>
                         <div class="push">
+                          por: {{postagem.postagemUsuario.nome}} 
                           {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
                         </div>
 

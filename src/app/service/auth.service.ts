@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../model/Usuario';
@@ -13,7 +14,8 @@ export class AuthService {
   foto = environment.nome
   
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   token = {
@@ -27,7 +29,6 @@ export class AuthService {
   }
     
   cadastrar (usuario: Usuario): Observable<Usuario>{
-    console.log(usuario)
     return this.http.post<Usuario>('https://projetonexogen.herokuapp.com/usuario/cadastrar', usuario);
     
   }
@@ -37,5 +38,17 @@ export class AuthService {
       `https://projetonexogen.herokuapp.com/usuario/${id}`,this.token
     );
   }
+
+  logado(){
+    let ok: boolean = false
+
+    if (environment.token != ''){
+      ok = true
+    }
+
+    return ok
+  }
+
+
 
 }

@@ -24,6 +24,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { UtilidadesComponent } from './utilidades/utilidades.component';
 import { TestemunhosComponent } from './testemunhos/testemunhos.component';
 import { AlertasComponent } from './alertas/alertas.component';
+import { UsercandidatoEditComponent } from './edit/usercandidato-edit/usercandidato-edit.component';
+import { UserempresaEditComponent } from './edit/userempresa-edit/userempresa-edit.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { AlertasComponent } from './alertas/alertas.component';
     UtilidadesComponent,
     TestemunhosComponent,
     AlertasComponent,
+    UsercandidatoEditComponent,
+    UserempresaEditComponent,
 
 
   ],

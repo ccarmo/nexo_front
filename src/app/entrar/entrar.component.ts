@@ -33,6 +33,8 @@ export class EntrarComponent implements OnInit {
        environment.email = this.usuarioDTO.email
        environment.token = this.usuarioDTO.token
        environment.id    = this.usuarioDTO.id;
+       environment.tipo  = this.usuarioDTO.tipo;
+
        this.router.navigate(['/inicio'])
      }, erro => {
        if(erro.status == 400){

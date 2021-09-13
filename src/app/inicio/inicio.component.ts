@@ -21,6 +21,7 @@ export class InicioComponent implements OnInit {
   nome = environment.nome;
   foto = environment.foto;
   email = environment.email;
+  tipo = environment.tipo;
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
@@ -49,7 +50,9 @@ export class InicioComponent implements OnInit {
     }
     this.getAllTemaInicio()
     this.getAllPostagens()
-    console.log(environment.id)
+    this.logadoCandidato()
+    this.logadoEmpresa()
+    console.log(environment.tipo)
   }
   getAllTemaInicio() {
     this.temaService.getAllTema().subscribe((resp: Tema[])=>{
@@ -91,6 +94,26 @@ export class InicioComponent implements OnInit {
         this.listaTemas = resp
       })
     }
+  }
+
+  logadoCandidato(){
+    let ok: boolean = false
+
+    if (environment.tipo == 'CANDIDATO'){
+      ok = true
+    }
+
+    return ok
+  }
+
+  logadoEmpresa(){
+    let ok: boolean = false
+
+    if (environment.tipo == 'EMPRESA'){
+      ok = true
+    }
+
+    return ok
   }
 
   

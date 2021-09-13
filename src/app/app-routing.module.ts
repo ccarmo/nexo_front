@@ -13,6 +13,8 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { MenuComponent } from './menu/menu.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
+import { UserempresaEditComponent } from './edit/userempresa-edit/userempresa-edit.component';
+import { UsercandidatoEditComponent } from './edit/usercandidato-edit/usercandidato-edit.component';
 
 
 const routes: Routes = [
@@ -30,7 +32,9 @@ const routes: Routes = [
     {path:'tema-delete/:id', component: TemaDeleteComponent},
     {path:'postagem-edit/:id', component: PostagemEditComponent},
     {path:'postagem-delete/:id', component: PostagemDeleteComponent},
-    {path:'sobrenos', component: SobrenosComponent},
+    {path:'userempresa-edit/:id', component: UserempresaEditComponent},
+    {path:'usercandidato-edit/:id', component: UsercandidatoEditComponent},
+    {path:'sobrenos', component: SobrenosComponent}
 
 
 
