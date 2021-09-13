@@ -1,9 +1,11 @@
-<app-menu></app-menu>
+<app-menu-inicio *ngIf='auth.logado() === true'></app-menu-inicio>
+<app-menu *ngIf='auth.logado() === false' ></app-menu>
 <router-outlet></router-outlet>
-<app-cadastrar-candidato></app-cadastrar-candidato>
-<app-entrar></app-entrar>
-<app-sobrenos></app-sobrenos>
-<app-timedev></app-timedev>
-<app-rodape></app-rodape>
+<app-rodape *ngIf='auth.logado() === false' ></app-rodape>
+
+
+
+
+
 
 

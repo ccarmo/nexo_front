@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="d-flex flex-column">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center text-light">Atualizar dados empresa</h1>
+      </div>
+    </div>
+  
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10">
+  
+        <div class="form-group mt-3">
+          <label for="nome" class="text-light">Nome:</label>
+          <input [(ngModel)]='usuario.nome' class="form-control mt-1" type="text" name="nome" id="nome" placeholder="Seu nome">
+        </div>
+
+        <div class="form-group mt-3">
+            <label for="ramo_empresa" class="text-light">Ramo Empresa:</label>
+            <input [(ngModel)]='usuario.ramo_empresa' class="form-control mt-1" type="text" name="ramo_empresa" id="ramo_empresa" placeholder="Ramo da sua empresa">
+          </div>
+  
+        <div class="form-group mt-3">
+          <label for="foto" class="text-light">Link da Foto:</label>
+          <input [(ngModel)]='usuario.foto' class="form-control mt-1" type="text" name="foto" id="foto"
+            placeholder="Link da sua foto">
+        </div>
+  
+        <div class="form-group mt-3">
+          <label for="senha" class="text-light">Senha:</label>
+          <input (input)='confirmSenha($event)' class="form-control mt-1" type="password" name="senha" id="senha"
+            placeholder="Sua senha">
+        </div>
+  
+        <div class="form-group mt-3">
+          <label for="confirmSenha" class="text-light">Confirmar Senha:</label>
+          <input [(ngModel)]='usuario.senha' class="form-control mt-1" type="password" name="confirmSenha" id="confirmSenha"
+            placeholder="Confirme sua senha">
+        </div>
+  
+  
+        <div class="d-flex justify-content-end mt-3 mb-3 ">
+          <div class="btn-space">
+            <button type="submit" class="btn btn-danger" routerLink='/inicio'>Cancelar</button>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-success" (click)='atualizar()'>Atualizar</button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  </div>
