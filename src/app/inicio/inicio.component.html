@@ -203,6 +203,7 @@
                     </div>
                     <div class="card-footer text-muted">
                       <div class="box">
+                      
                         <div>
                           <button [routerLink]="['/postagem-edit', postagem.id_postagem]" type="button" class="btn-link"
                             title="" data-toggle="tooltip" data-original-title="Editar">
@@ -212,9 +213,10 @@
                         <div>
                           <button [routerLink]="['/postagem-delete', postagem.id_postagem]" type="button"
                             class="btn-link" title="" data-toggle="tooltip" data-original-title="Excluir">
-                            <i class="fa fa-trash-alt"></i>
+                            <i class="fa fa-trash"></i>
                           </button>
                         </div>
+                       
                         <div class="push">
                           por: {{usuario.nome}} | {{postagem.data | date: 'dd/MM/yyyy'}} às
                           {{postagem.data | date: 'HH:mm'}}
@@ -264,7 +266,7 @@
                         <div>
                           <button type="button" class="btn-link" title="" data-toggle="tooltip"
                             data-original-title="Email">
-                            <i class="fa fa-envelope"></i>
+                            <a href="mailto:{{postagem.postagemUsuario.email}}" class="text-reset"><i class="fa fa-envelope"></i></a>
                           </button>
                         </div>
                         <div class="push">
