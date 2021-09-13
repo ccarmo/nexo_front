@@ -1,0 +1,68 @@
+.navbar-nexo{
+    background-color: transparent;
+    background: radial-gradient(circle, rgba(1,106,109,1) 0%, rgba(5,81,107,1) 50%, rgba(4,62,82,1) 100%);
+}
+
+
+.navbar-nexo .navbar-nav>li>a {
+    justify-content: flex-end;
+    color: #bdc0c2;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.navbar-nexo .navbar>li>a {
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    width: 100%;
+    border-bottom:none;
+    background-color: transparent;
+    min-width: 300px;
+    border: none;
+}
+
+.navbar-nexo .navbar-default .navbar-nav>.open>a,
+.navbar-nexo .navbar-default .navbar-nav>.open>a:focus,
+.navbar-nexo .navbar-default .navbar-nav>.open>a:hover {
+    color: #ccc;
+    background-color: transparent;
+}
+
+.navbar-nexo .nav>li>a:focus,
+.navbar-nexo .nav>li>a:hover {
+    color: #ccc;
+    background-color: transparent;
+}
+
+.navbar-nexo .navbar-nav>li {
+    margin-right: 20px;
+}
+
+.navbar-nexo .navbar-nav {
+   margin-top: 12px;
+}
+
+.navbar-nexo .navbar-toggle {
+    background-color: transparent !important;
+    margin-top: 20px;
+    border: 1px solid #fff;
+}
+
+@media screen and (max-width: 767px) {
+
+    .navbar-nexo .navbar-default .navbar-nav >li>a{
+        color: #fff;
+        font-size: 16px;
+    }
+
+    .navbar-nexo .navbar-default .navbar-nav >li>a:hover{
+        color: #ccc;
+    }
+
+    .navbar-nexo .navbar-collapse {
+        margin-left: 20px;
+        border-top: none;
+        box-shadow: none;
+    }
+}

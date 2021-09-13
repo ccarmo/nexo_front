@@ -26,6 +26,7 @@ import { TestemunhosComponent } from './testemunhos/testemunhos.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { UsercandidatoEditComponent } from './edit/usercandidato-edit/usercandidato-edit.component';
 import { UserempresaEditComponent } from './edit/userempresa-edit/userempresa-edit.component';
+import { MenuInicioComponent } from './menu-inicio/menu-inicio.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { UserempresaEditComponent } from './edit/userempresa-edit/userempresa-ed
     AlertasComponent,
     UsercandidatoEditComponent,
     UserempresaEditComponent,
+    MenuInicioComponent,
 
 
   ],
