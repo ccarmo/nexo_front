@@ -19,7 +19,7 @@ import { UsercandidatoEditComponent } from './edit/usercandidato-edit/usercandid
 
 const routes: Routes = [
 
-    {path: '', redirectTo: 'menu', pathMatch: 'full'},
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'menu', component: MenuComponent},
     {path:'entrar', component: EntrarComponent},
     {path:'home', component: HomeComponent},
