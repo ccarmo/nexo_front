@@ -46,7 +46,8 @@
           </div>
 
         </div>
-
+         
+      <!---
         <div class="card mt-3">
           <div class="card-body">
             <div class="d-flex flex-column align-items-center text-center">
@@ -65,6 +66,8 @@
             </div>
           </div>
         </div>
+
+      -->
 
       </div>
       <div class="col-lg-8">
@@ -170,7 +173,7 @@
                           </button>
                         </div>
                         <div class="push">
-                          por: {{postagem.postagemUsuario.nome}}|{{postagem.data | date: 'dd/MM/yyyy'}} às
+                          por: {{postagem.postagemUsuario.nome}} | {{postagem.data | date: 'dd/MM/yyyy'}} às
                           {{postagem.data | date: 'HH:mm'}}
                         </div>
 
@@ -194,7 +197,7 @@
 
                     </div>
                     <div class="card-body">
-                      <small class="text-muted">Tema: {{postagem.nomeTema}}</small>
+                      <!--<small class="text-muted">Tema: {{postagem.nomeTema}}</small>-->
                       <p class="card-text">{{postagem.pitch}}</p>
 
                     </div>
@@ -213,7 +216,7 @@
                           </button>
                         </div>
                         <div class="push">
-                          por: {{usuario.nome}} {{postagem.data | date: 'dd/MM/yyyy'}} às
+                          por: {{usuario.nome}} | {{postagem.data | date: 'dd/MM/yyyy'}} às
                           {{postagem.data | date: 'HH:mm'}}
                         </div>
 
@@ -265,7 +268,7 @@
                           </button>
                         </div>
                         <div class="push">
-                          por: {{postagem.postagemUsuario.nome}} 
+                          por: {{postagem.postagemUsuario.nome}} |
                           {{postagem.data | date: 'dd/MM/yyyy'}} às {{postagem.data | date: 'HH:mm'}}
                         </div>
 
