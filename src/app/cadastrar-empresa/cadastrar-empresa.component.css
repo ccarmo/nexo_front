@@ -120,6 +120,15 @@
     text-transform: capitalize;
     letter-spacing: 4px;
     font-family: 'Roboto', sans-serif;
+    padding-right: 26px;
+  }
+
+  #p-alinha {
+    padding-right: 26px;
+  }
+
+  #p-alinha-cadastro {
+    padding-right: 8px;
   }
   
   /*-- principal --*/
