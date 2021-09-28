@@ -25,7 +25,16 @@ body{
     background-clip: border-box;
     border: 0 solid rgba(0,0,0,.125);
     border-radius: .25rem;
+    margin-bottom: 90px !important;
+    margin-top: 90px !important;
 }
+
+.card-infouser {
+    margin-bottom: -30px !important;
+    margin-top: -30px !important;
+}
+
+
 
 .card-body {
     flex: 1 1 auto;
@@ -80,6 +89,7 @@ body{
    
    .panel {
        margin-bottom: 30px;
+       padding-bottom: 5px;
        color: #696969;
        background-color: #fff;
        border-radius: 5px;
