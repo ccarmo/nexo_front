@@ -61,6 +61,20 @@
   .clear {
     clear: both;
   }
+
+  .container-fluid{
+    background: rgb(1,106,109);
+    background: linear-gradient(90deg, rgba(1,106,109,1) 0%, rgba(5,81,107,1) 50%, rgba(4,62,82,1) 100%);
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /* adicionando imagem de fundo */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
   
   .pos-relative {
     position: relative;
@@ -106,6 +120,15 @@
     text-transform: capitalize;
     letter-spacing: 4px;
     font-family: 'Roboto', sans-serif;
+    padding-right: 26px;
+  }
+
+  #p-alinha {
+    padding-right: 26px;
+  }
+
+  #p-alinha-cadastro {
+    padding-right: 8px;
   }
   
   /*-- principal --*/
@@ -160,7 +183,7 @@
     cursor: pointer;
     padding: 0.9em;
     -webkit-appearance: none;
-    width: 100%;
+    width: 80%;
     margin: 2em 0;
     letter-spacing: 3px;
   }

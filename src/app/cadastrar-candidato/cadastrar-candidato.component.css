@@ -106,7 +106,87 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     text-transform: capitalize;
     letter-spacing: 4px;
     font-family: 'Roboto', sans-serif;
+    padding-right: 28px;
   }
+
+  #p-alinha {
+    padding-right: 32px;
+  }
+
+  #p-alinha-cadastro {
+    padding-right: 12px;
+  }
+
+  .main-agileinfo {
+    margin: 2em auto;
+  }
+
+  .main-agileinfo {
+    width: 36%;
+  }
+
+
+@media(max-width:1280px) {
+  .main-agileinfo {
+    width: 40%;
+  }
+}
+
+@media(max-width:1080px) {
+  .main-agileinfo {
+    width: 46%;
+  }
+}
+
+@media(max-width:1024px) {
+  .main-agileinfo {
+    width: 49%;
+  }
+}
+
+@media(max-width:736px) {
+  .main-agileinfo {
+    width: 62%;
+  }
+}
+
+@media(max-width:667px) {
+  .main-agileinfo {
+    width: 67%;
+  }
+}
+
+@media(max-width:900px) {
+  .main-agileinfo {
+    width: 58%;
+  }
+}
+
+.campos-inserçao p {
+  font-size: 1em;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  font-weight: 300;
+  margin: 2em 0;
+  padding: 0.9em;
+}
+
+.campos-inserçao p a {
+  color: #fff;
+  -webkit-transition: .5s all;
+  -moz-transition: .5s all;
+  transition: .5s all;
+  font-weight: 400;
+  margin: 2em 0;
+  padding: 0.9em;
+}
+
+.campos-inserçao p a:hover {
+  color: rgba(4,62,82,1) 100%2;
+  margin: 2em 0;
+  padding: 0.9em;
+}
   
   /*-- principal --*/
 
@@ -160,7 +240,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     cursor: pointer;
     padding: 0.9em;
     -webkit-appearance: none;
-    width: 100%;
+    width: 80%;
     margin: 2em 0;
     letter-spacing: 3px;
   }

@@ -4,37 +4,58 @@
     <!-- CAMINHO CSS -->
     <link href="cadastrar-candidato.component.css" rel="stylesheet" type="text/css" media="all" />
     <!-- FONTES EXTERNAS -->
-    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">       
-    </head>
-    
-    <body>
-        <!-- main -->
-        <div class="layout-principal wrapper">
-            <h1><img src="https://i.imgur.com/5LQBQKL.png m-10px" width="150px" height="50px" alt="Logo-No-sem-fundo"></h1>
-            <div class="cadastro-principal">
-                <div class="cadastro-corpo">
-                    <form action="#" method="post">
-                        <input [(ngModel)]='usuario.nome' type="text" class="form-control" name="nome" placeholder="Nome" id="nome"> 
-                        <input [(ngModel)]='usuario.idade' type="text" class="form-control" name="idade" placeholder="idade" id="idade">
-                        <input [(ngModel)]='usuario.email' type="text" class="form-control" name="email" placeholder="Email" id="email">
-                        <input [(ngModel)]='usuario.foto' type="text"  class="form-control" name="foto" placeholder="Link da foto" id="foto">
-                        <input [(ngModel)]='usuario.renda_familiar' type="text" class="form-control" name="renda familiar" placeholder="Renda familiar" id="renda familiar" >
-                        <input (input)='confirmSenha($event)' type="password" class="form-control" name="senha" placeholder="Senha" id="senha">
-                        <input [(ngModel)]='usuario.senha' type="password" class="form-control" name="confirmSenha" placeholder="Confirme a senha">
-                        <div class="wthree-text">
-                            <div class="clear"> </div>
-                        </div>
-                        <input type="submit" class="btn btn-success" (click)='cadastrar()' value="CADASTRAR">
-                    </form>
-                    <p>Já possui uma conta ? <a routerLink='/entrar'> Entre agora!</a></p>
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+</head>
+
+<body>
+    <!-- main -->
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="col-md-12">
+            
+                <div class="p-2"></div>
+                <div class="row">
+                    <h1><img src="https://i.imgur.com/5LQBQKL.png m-10px" width="150px" height="50px"
+                            alt="Logo-No-sem-fundo">
+                    </h1>
                 </div>
-            </div>
-            <!-- footer cadastro -->
-            <div class="footer-copyrigth bg-transparent - text-center py-3">
-                <span class="text-light"> © 2021 Copyright: </span>
-                <a class="text-light" target="_blank" href="https://brasil.generation.org">Generation Brasil</a>
-            </div>
-            <!-- //footer cadastro -->
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="main-agileinfo">
+                        <div class="campos-inserçao">
+                            <form action="#" method="post">
+                                <input [(ngModel)]='usuario.nome' type="text" class="form-control" name="nome"
+                                    placeholder="Nome" id="nome">
+                                <input [(ngModel)]='usuario.idade' type="text" class="form-control" name="idade"
+                                    placeholder="idade" id="idade">
+                                <input [(ngModel)]='usuario.email' type="text" class="form-control" name="email"
+                                    placeholder="Email" id="email">
+                                <input [(ngModel)]='usuario.foto' type="text" class="form-control" name="foto"
+                                    placeholder="Link da foto" id="foto">
+                                <input [(ngModel)]='usuario.renda_familiar' type="text" class="form-control"
+                                    name="renda familiar" placeholder="Renda familiar" id="renda familiar">
+                                <input (input)='confirmSenha($event)' type="password" class="form-control" name="senha"
+                                    placeholder="Senha" id="senha">
+                                <input [(ngModel)]='usuario.senha' type="password" class="form-control"
+                                    name="confirmSenha" placeholder="Confirme a senha">
+                                <div class="wthree-text">
+                                    <div class="clear"> </div>
+                                </div>
+                                <div id="p-alinha">
+                                    <input type="submit" class="btn btn-success" (click)='cadastrar()'
+                                        value="CADASTRAR">
+                                </div>
+                            </form>
+                            <div id="p-alinha-cadastro">
+                                <p>Já possui uma conta ? <a routerLink='/entrar'> Entre agora!</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer cadastro -->
+                <div class="footer-copyrigth bg-transparent - text-center py-3">
+
+                </div>
+                <!-- //footer cadastro -->
+            
         </div>
-    </body>
- 
+    </div>
+</body>
